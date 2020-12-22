@@ -31,10 +31,11 @@ const teamCodeTranslation = {
   // todo there are probably more, this is just what i have on my team
 };
 
-fetch('http://data.nba.net/prod/v1/2020/schedule.json') // Call the fetch function passing the url of the API as a parameter
-.then(response => response.json())
-.then(data => processSchedule(data))
-.catch(e => console.log(e));
+// shoutout https://github.com/jasonroman/nba-api. really nice project.
+fetch('http://data.nba.net/prod/v1/2020/schedule.json')
+  .then(response => response.json())
+  .then(data => processSchedule(data))
+  .catch(e => console.log(e));
 
 processSchedule = (data) => {
   actualGames = data.league.standard.filter(i => i.seasonStageId === 2);
