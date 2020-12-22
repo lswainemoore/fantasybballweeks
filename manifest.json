@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "Weekly Totals",
+  "version": "1.0",
+
+  "description": "Total across weeks.",
+
+  "icons": {
+    // this is the default from mozilla
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://fantasy.espn.com/*"],
+      "js": ["weekly_totals.js"]
+    }
+  ],
+  "permissions": [
+    "*://data.nba.net/*",
+    "webRequest"
+  ]
+
+}
